@@ -9,7 +9,7 @@ def meta_context(request):
             'description': 'Grades calculator.',
             'keywords': 'grades,calc,modules,exams,first,result',
             # Image to display to Google+ and Facebook
-            'image': settings.STATIC_URL + 'images/facebook.jpg',
+            'image': settings.STATIC_URL + 'images/social.png',
             # Facebook page ID (if any)
             'fb_page_id': '',
          }
