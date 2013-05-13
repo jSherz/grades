@@ -1,0 +1,48 @@
+// Your custom SCSS should be written here...
+
+body {
+	overflow-y: scroll;
+}
+
+table {
+	td, th {
+		border: solid 1px #ccc;
+		padding: 10px;
+	}
+	
+	th {
+		background-color: #eee;
+	}
+	
+	margin-bottom: 1em;
+	width: 100%;
+}
+
+#wrapper {}
+
+#header, #footer, #form, #results {
+	@include row();
+}
+
+#header, #footer, #form, #results {
+	&> div {
+		@include column(12);
+	}
+}
+
+#header {
+	h1 {
+		text-align: center;
+		font-weight: bold;
+	}
+}
+
+#footer {
+	text-align: center;
+	color: #ccc;
+	margin-top: 1em;
+}
+
+.result {
+	width: 10%;
+}
