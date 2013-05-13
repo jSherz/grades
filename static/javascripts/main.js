@@ -4,7 +4,7 @@ var templates = {
 		var id = 'grade_' + module.code;
 	
 		return '<li class="append field">' +
-			   '    <label class="inline" for="' + id + '">' + module.name + '</label>' +
+			   '    <label class="inline" for="' + id + '">' + module.code + ' - ' + module.name + '</label>' +
 			   '    <input id="' + id + '" class="settings_grade xnarrow text input" type="text" placeholder="' + module.short_name + '" data-module="' + module.code + '">' +
 			   '    <span class="adjoined">%</span>' +
 			   '</li>';
