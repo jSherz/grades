@@ -6,8 +6,8 @@ def meta_context(request):
     return {
         'meta': {
             'title': 'Grades Calc',
-            'description': 'Meta description.',
-            'keywords': 'Meta keywords.',
+            'description': 'Grades calculator.',
+            'keywords': 'grades,calc,modules,exams,first,result',
             # Image to display to Google+ and Facebook
             'image': settings.STATIC_URL + 'images/facebook.jpg',
             # Facebook page ID (if any)
