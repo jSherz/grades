@@ -47,7 +47,7 @@ STATIC_ROOT = ROOT + 'collected-static/'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+STATIC_URL = 'http://grades.jsherz.com/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
