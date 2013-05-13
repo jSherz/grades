@@ -3,7 +3,7 @@ from base import *
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-ROOT = '/home/cserv1_a/soc_ug/sc12jsj/projects/grades/'
+ROOT = os.environ.get('ROOT_DIR', '/home/james/projects/grades/')
 
 ADMINS = (
     ('James Sherwood-Jones', 'james.sherwoodjones@gmail.com'),

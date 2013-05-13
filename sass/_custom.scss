@@ -1,48 +1,78 @@
-// Your custom SCSS should be written here...
+@import "compass/css3/text-shadow";
+@import "compass/css3/box-shadow";
+
+$theme-color: #3a1c74;
 
 body {
-	overflow-y: scroll;
+  overflow-y: scroll;
+  background: url('/static/images/white_brick_wall.png');
 }
 
 table {
-	td, th {
-		border: solid 1px #ccc;
-		padding: 10px;
-	}
-	
-	th {
-		background-color: #eee;
-	}
-	
-	margin-bottom: 1em;
-	width: 100%;
+  td, th {
+    border: solid 1px #ccc;
+    padding: 10px;
+  }
+
+  th {
+    background-color: #eee;
+  }
+
+  td {
+    background-color: #fff;
+  }
+
+  margin-bottom: 1em;
+  width: 100%;
 }
 
-#wrapper {}
-
-#header, #footer, #form, #results {
-	@include row();
+#wrapper {
 }
 
 #header, #footer, #form, #results {
-	&> div {
-		@include column(12);
-	}
+  @include row();
+}
+
+#header, #footer, #form, #results {
+  &> div {
+    @include column(12);
+  }
+}
+
+#form, #results {
+  &> div {
+    background-color: #fff;
+    padding: 10px;
+    @include box-shadow(0 0 15px #888);
+  }
+
+  margin-bottom: 10px;
 }
 
 #header {
-	h1 {
-		text-align: center;
-		font-weight: bold;
-	}
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    @include text-shadow(0 0 15px #000);
+    color: lighten($theme-color, 60%);
+  }
+}
+
+div:first-of-type h2 {
+  margin-top: -5px;
+  padding-top: 0;
 }
 
 #footer {
-	text-align: center;
-	color: #ccc;
-	margin-top: 1em;
+  text-align: center;
+  color: #999;
+  margin-top: 1em;
+
+  a {
+    color: #666;
+  }
 }
 
 .result {
-	width: 10%;
+  width: 10%;
 }
