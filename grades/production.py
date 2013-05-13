@@ -3,7 +3,7 @@ from base import *
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
-ROOT = '/home/cserv1_a/soc_ug/sc12jsj/Desktop/djtemplate/'
+ROOT = '/home/grades/site/'
 
 ADMINS = (
     ('James Sherwood-Jones', 'james.sherwoodjones@gmail.com'),
