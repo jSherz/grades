@@ -3,3 +3,4 @@ __pycache__
 .idea
 .sass-cache
 collected-static
+main.db
