@@ -27,7 +27,7 @@ DATABASES = {
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = [
     'localhost',
-    'grades.com',
+    'grades.jsherz.com',
 ]
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
