@@ -15,7 +15,7 @@ var templates = {
 	'module_result': function (module, pc) {
 		return '<tr>' +
 		       '     <td>' + module.name + '</td>' +
-		       '     <td>' + module.weighting.exam + '</td>' +
+		       '     <td>' + module.weighting.exam + '%</td>' +
 		       '     <td class="result result_' + module.code + '_70">N/A</td>' +
 		       '     <td class="result result_' + module.code + '_60">N/A</td>' +
 		       '     <td class="result result_' + module.code + '_50">N/A</td>' +
