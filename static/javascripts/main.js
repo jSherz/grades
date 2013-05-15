@@ -66,6 +66,22 @@ Gumby.ready(function() {
 			'weighting': {
 				'exam': 40
 			}
+		},
+		'COMP1641': {
+			'code': 'COMP1641',
+			'name': 'Algorithms',
+			'short_name': 'Algo',
+			'weighting': {
+				'exam': 80
+			}
+		},
+		'COMP1740': {
+			'code': 'COMP1740',
+			'name': 'Maths',
+			'short_name': 'Maths',
+			'weighting': {
+				'exam': 80
+			}
 		}
 	};
 	
