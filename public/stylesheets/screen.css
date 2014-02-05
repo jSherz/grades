@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Fugaz+One);
 /**
 * Gumby Framework
 * ---------------
@@ -1705,7 +1706,7 @@ table td { background-color: #fff; }
 #form, #results { margin-bottom: 10px; }
 #form > div, #results > div { background-color: #fff; padding: 10px; -webkit-box-shadow: 0 0 10px #888888; -moz-box-shadow: 0 0 10px #888888; box-shadow: 0 0 10px #888888; }
 
-#header h1 { text-align: center; font-weight: bold; text-shadow: 0 0 10px black; color: #dbcff3; }
+#header h1 { text-align: center; font-weight: bold; color: #000; font-family: 'Fugaz One', cursive; }
 
 div:first-of-type h2 { margin-top: -5px; padding-top: 0; }
 
