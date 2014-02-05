@@ -35,50 +35,42 @@ Gumby.ready(function() {
 	}
 	
 	var modules = {
-		'COMP1345': {
-			'code': 'COMP1345',
-			'name': 'Models & Simulations',
-			'short_name': 'Mods & Sims',
+		'COMP2448': {
+			'code': 'COMP2448',
+			'name': 'Information Systems and Databases',
+			'short_name': 'Info Sys & DB',
 			'weighting': {
-				'exam': 80
+				'exam': 60
 			}
 		},
-		'COMP1440': {
-			'code': 'COMP1440',
-			'name': 'Computer Systems',
-			'short_name': 'Comp Sys',
+		'COMP2449': {
+			'code': 'COMP2449',
+			'name': 'Networking and IT Management',
+			'short_name': 'Net & IT Man',
+			'weighting': {
+				'exam': 60
+			}
+		},
+		'COMP2542': {
+			'code': 'COMP2542',
+			'name': 'Graphical User Interfaces',
+			'short_name': 'GUIs',
 			'weighting': {
 				'exam': 70
 			}
 		},
-		'COMP1745': {
-			'code': 'COMP1745',
-			'name': 'Web Development',
-			'short_name': 'Web Dev',
-			'weighting': {
-				'exam': 50
-			}
-		},
-		'COMP1551': {
-			'code': 'COMP1551',
-			'name': 'Core Programming',
-			'short_name': 'Core Prog',
-			'weighting': {
-				'exam': 40
-			}
-		},
-		'COMP1641': {
-			'code': 'COMP1641',
-			'name': 'Algorithms',
-			'short_name': 'Algo',
+		'COMP2645': {
+			'code': 'COMP2645',
+			'name': 'Strategy and Security',
+			'short_name': 'Strat & Sec',
 			'weighting': {
 				'exam': 80
 			}
 		},
-		'COMP1740': {
-			'code': 'COMP1740',
-			'name': 'Maths',
-			'short_name': 'Maths',
+		'COMP2646': {
+			'code': 'COMP2646',
+			'name': 'Business Applications',
+			'short_name': 'Bus Apps',
 			'weighting': {
 				'exam': 80
 			}
