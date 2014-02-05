@@ -99,7 +99,7 @@ Gumby.ready(function() {
 	var valid_regex = /^[0-9]+$/;
 	
 	// Validate grades
-	$('.settings_grade').change(function () {
+	$('.settings_grade').keyup(function () {
 		// Module
 		var module = modules[$(this).attr('data-module')];
 		
