@@ -15,6 +15,6 @@ Tools & technologies
 
 ToDo
 ----
-- [ ] Update for 2014 weightings.
-- [ ] Remove Django & make entirely static.
-- [ ] Update to latest version of Gumby framework.
+* Update for 2014 weightings.
+* Remove Django & make entirely static.
+* Update to latest version of Gumby framework.
