@@ -6,7 +6,6 @@ For the guys & gals on my course (and me!)
 
 Tools & technologies
 --------------------
-- [Django](https://www.djangoproject.com/)
 - [Sass](https://github.com/nex3/sass) - Nathan Weizenbaum 
 - [Compass](https://github.com/chriseppstein/compass) - Chris Eppstein 
 - [Modular Scale](https://github.com/scottkellum/modular-scale) - Scott Kellum 
@@ -16,5 +15,5 @@ Tools & technologies
 ToDo
 ----
 * ~~Update for 2014 weightings.~~
-* Remove Django & make entirely static.
+* ~~Remove Django & make entirely static.~~
 * Update to latest version of Gumby framework.
