@@ -2,7 +2,7 @@
 @import "compass/css3/box-shadow";
 @import url(http://fonts.googleapis.com/css?family=Fugaz+One);
 
-$theme-color: #3f0074;
+$theme-color: #00B9B9;
 
 body {
   width: 100%;
@@ -46,13 +46,16 @@ table {
   &> div {
     background-color: #fff;
     padding: 10px;
-    @include box-shadow(0 0 10px #888);
+    @include box-shadow(0 0 5px #888);
+    border: solid 1px #666;
   }
 
   margin-bottom: 10px;
 }
 
 #header {
+  margin-top: 10px;
+
   h1 {
     text-align: center;
     font-weight: bold;
@@ -63,7 +66,11 @@ table {
 
 div:first-of-type h2 {
   margin-top: -5px;
-  padding-top: 0;
+  padding: 10px;
+  margin: -10px -10px 10px -10px;
+  background-color: $theme-color;
+  font-weight: $font-weight-semibold;
+  border-bottom: solid 1px #666;
 }
 
 #footer {
