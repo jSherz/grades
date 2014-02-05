@@ -1703,9 +1703,9 @@ table td { background-color: #fff; }
 @media only screen and (max-width: 767px) { #header > div, #footer > div, #form > div, #results > div { float: left; margin-left: 0; width: 100%; } }
 
 #form, #results { margin-bottom: 10px; }
-#form > div, #results > div { background-color: #fff; padding: 10px; -webkit-box-shadow: 0 0 15px #888888; -moz-box-shadow: 0 0 15px #888888; box-shadow: 0 0 15px #888888; }
+#form > div, #results > div { background-color: #fff; padding: 10px; -webkit-box-shadow: 0 0 10px #888888; -moz-box-shadow: 0 0 10px #888888; box-shadow: 0 0 10px #888888; }
 
-#header h1 { text-align: center; font-weight: bold; text-shadow: 0 0 15px black; color: #dbcff3; }
+#header h1 { text-align: center; font-weight: bold; text-shadow: 0 0 10px black; color: #dbcff3; }
 
 div:first-of-type h2 { margin-top: -5px; padding-top: 0; }
 
