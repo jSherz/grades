@@ -20,8 +20,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
     <link rel="stylesheet" href="stylesheets/screen.css">
-
-    <script src="javascripts/libs/modernizr-2.6.2.min.js"></script>
 </head>
 
 <body>
@@ -84,38 +82,9 @@
     </div>
 </div>
 
-<script>
-var oldieCheck = Boolean(document.getElementsByTagName('html')[0].className.match(/\soldie\s/g));
-if(!oldieCheck) {
-document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"><\/script>');
-} else {
-document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"><\/script>');
-}
-</script>
-<script>
-if(!window.jQuery) {
-if(!oldieCheck) {
-  document.write('<script src="javascripts/libs/jquery-2.0.2.min.js"><\/script>');
-} else {
-  document.write('<script src="javascripts/libs/jquery-1.10.1.min.js"><\/script>');
-}
-}
-</script>
-
-<script src="javascripts/libs/gumby.min.js"></script>
+<script src="javascripts/jquery-2.1.4.min.js"></script>
 <script src="javascripts/plugins.js"></script>
 <script src="javascripts/main.js"></script>
-
-<script>
-    window._gaq = [
-        ['_setAccount', 'UA-12161226-6'],
-        ['_trackPageview'],
-        ['_trackPageLoadTime']
-    ];
-    Modernizr.load({
-        load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    });
-</script>
 
 <!--[if lt IE 7 ]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>

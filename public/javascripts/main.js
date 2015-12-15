@@ -24,139 +24,112 @@ var templates = {
 	},
 };
 
-
-// Gumby is ready to go
-Gumby.ready(function() {
-	console.log('Gumby is ready to go...', Gumby.debug());
-
-	// placeholder polyfil
-	if(Gumby.isOldie || Gumby.$dom.find('html').hasClass('ie9')) {
-		$('input, textarea').placeholder();
+var modules = {
+	'COMP2448': {
+		'code': 'COMP2448',
+		'name': 'Information Systems and Databases',
+		'short_name': 'Info Sys & DB',
+		'weighting': {
+			'exam': 60
+		}
+	},
+	'COMP2449': {
+		'code': 'COMP2449',
+		'name': 'Networking and IT Management',
+		'short_name': 'Net & IT Man',
+		'weighting': {
+			'exam': 60
+		}
+	},
+	'COMP2542': {
+		'code': 'COMP2542',
+		'name': 'Graphical User Interfaces',
+		'short_name': 'GUIs',
+		'weighting': {
+			'exam': 70
+		}
+	},
+	'COMP2645': {
+		'code': 'COMP2645',
+		'name': 'Strategy and Security',
+		'short_name': 'Strat & Sec',
+		'weighting': {
+			'exam': 80
+		}
+	},
+	'COMP2646': {
+		'code': 'COMP2646',
+		'name': 'Business Applications',
+		'short_name': 'Bus Apps',
+		'weighting': {
+			'exam': 80
+		}
 	}
+};
+
+// Clear settings form loading messages
+$('#form ul').empty();
+$('#results_table tbody').empty();
 	
-	var modules = {
-		'COMP2448': {
-			'code': 'COMP2448',
-			'name': 'Information Systems and Databases',
-			'short_name': 'Info Sys & DB',
-			'weighting': {
-				'exam': 60
-			}
-		},
-		'COMP2449': {
-			'code': 'COMP2449',
-			'name': 'Networking and IT Management',
-			'short_name': 'Net & IT Man',
-			'weighting': {
-				'exam': 60
-			}
-		},
-		'COMP2542': {
-			'code': 'COMP2542',
-			'name': 'Graphical User Interfaces',
-			'short_name': 'GUIs',
-			'weighting': {
-				'exam': 70
-			}
-		},
-		'COMP2645': {
-			'code': 'COMP2645',
-			'name': 'Strategy and Security',
-			'short_name': 'Strat & Sec',
-			'weighting': {
-				'exam': 80
-			}
-		},
-		'COMP2646': {
-			'code': 'COMP2646',
-			'name': 'Business Applications',
-			'short_name': 'Bus Apps',
-			'weighting': {
-				'exam': 80
-			}
-		}
-	};
-	
-	// Clear settings form loading messages
-	$('#form ul').empty();
-	$('#results_table tbody').empty();
-	
-	$.each(modules, function (index, module) {
-		// Calculate the other weighting
-		if (module.weighting.exam && !module.weighting.coursework) {
-			module.weighting.coursework = 100 - module.weighting.exam;
-		} else if (!module.weighting.exam && module.weighting.coursework) {
-			module.weighting.exam = 100 - module.weighting.coursework;
-		}
+$.each(modules, function (index, module) {
+	// Calculate the other weighting
+	if (module.weighting.exam && !module.weighting.coursework) {
+	module.weighting.coursework = 100 - module.weighting.exam;
+	} else if (!module.weighting.exam && module.weighting.coursework) {
+		module.weighting.exam = 100 - module.weighting.coursework;
+	}
 		
-		// Build current grade form
-		$('#form ul').append(templates.current_grade(module));
+	// Build current grade form
+	$('#form ul').append(templates.current_grade(module));
 		
-		// Build the results table entry
-		$('#results_table tbody').append(templates.module_result(module));
-	});
+	// Build the results table entry
+	$('#results_table tbody').append(templates.module_result(module));
+});
 	
-	var valid_regex = /^[0-9]+$/;
+var valid_regex = /^[0-9]+$/;
 	
-	// Validate grades
-	$('.settings_grade').keyup(function () {
-		// Module
-		var module = modules[$(this).attr('data-module')];
+// Validate grades
+$('.settings_grade').keyup(function () {
+	// Module
+	var module = modules[$(this).attr('data-module')];
+	
+	// Check for blank num
+	if ($(this).val() == '') {
+		// Hide error
+		$('.invalid_' + module.code).slideUp(500, function () {
+			$(this).remove();
+		});
 		
-		// Check for blank num
-		if ($(this).val() == '') {
-			// Hide error
+		$('[class*=result_' + module.code + ']').html('N/A');
+	} else {
+		// Validate number
+		if (!$(this).val().match(valid_regex) || parseFloat($(this).val()) > module.weighting.coursework) {
+			// If not showing, display invalid message
+			if (!$('.invalid_' + module.code).is('*')) {
+				$(this).parent().append(templates.invalid_grade(module));
+				$('.invalid_' + module.code).slideDown(500);
+				$('[class*=result_' + module.code + ']').html('N/A');
+			}
+		} else {
 			$('.invalid_' + module.code).slideUp(500, function () {
 				$(this).remove();
 			});
+		
+			// Calculate results
+			var calc = [70, 60, 50, 40];
+			var pc_val = parseFloat($(this).val());
+		
+			calc.forEach(function (goal) {
+				var req = Math.round((goal - pc_val) / module.weighting.exam * 100);
+				var result_box = $('.result_' + module.code + '_' + goal);
 			
-			$('[class*=result_' + module.code + ']').html('N/A');
-		} else {
-			// Validate number
-			if (!$(this).val().match(valid_regex) || parseFloat($(this).val()) > module.weighting.coursework) {
-				// If not showing, display invalid message
-				if (!$('.invalid_' + module.code).is('*')) {
-					$(this).parent().append(templates.invalid_grade(module));
-					$('.invalid_' + module.code).slideDown(500);
-					$('[class*=result_' + module.code + ']').html('N/A');
+				if (req > 100) {
+					result_box.html('N/A');
+				} else {
+					result_box.html(req + '%');
 				}
-			} else {
-				$('.invalid_' + module.code).slideUp(500, function () {
-					$(this).remove();
-				});
-			
-				// Calculate results
-				var calc = [70, 60, 50, 40];
-				var pc_val = parseFloat($(this).val());
-			
-				calc.forEach(function (goal) {
-					var req = Math.round((goal - pc_val) / module.weighting.exam * 100);
-					var result_box = $('.result_' + module.code + '_' + goal);
-				
-					if (req > 100) {
-						result_box.html('N/A');
-					} else {
-						result_box.html(req + '%');
-					}
-				});
-			}
+			});
 		}
-	});
-	
-	// console.log(modules);
-});
-
-// Oldie document loaded
-Gumby.oldie(function() {
-	console.log("This is an oldie browser...");
-});
-
-Gumby.touch(function() {
-	console.log("This is a touch enabled device...");
-});
-
-// Document ready
-$(function() {
-
+	}
 });
 
