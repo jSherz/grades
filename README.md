@@ -1,19 +1,10 @@
 grades
 ======
-A project to calculate the required exam grade to achieve a degree classification.
+This is a (now mothballed) project to calculate the required exam grade to achieve a degree classification.
 
-For the guys & gals on my course (and me!)
+I originally made it for my fellow coursemates to help them work out what exam grade they'd need to get to achieve, for example, a first in a particular module.
 
-Tools & technologies
---------------------
-- [Sass](https://github.com/nex3/sass) - Nathan Weizenbaum 
-- [Compass](https://github.com/chriseppstein/compass) - Chris Eppstein 
-- [Modular Scale](https://github.com/scottkellum/modular-scale) - Scott Kellum 
-- [jQuery](http://jquery.com/) 
-- [Modernizr](http://modernizr.com/)
+It was built with Gumby Framework (similar to Bootstrap) and was one of the first mini-projects I made while learning SCSS / Sass.
 
-ToDo
-----
-* ~~Update for 2014 weightings.~~
-* ~~Remove Django & make entirely static.~~
-* ~~Update to latest version of Gumby framework.~~
+![Example view](https://cloud.githubusercontent.com/assets/1284988/11817939/523f46a8-a34f-11e5-9184-c305714b3b05.png)
+
